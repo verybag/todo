@@ -1,6 +1,9 @@
 # todo
 Todo List
 
+# LIVE DEMO:
+https://verybag.github.io/todo/
+
 # SKILLS DEMONSTRATED:
 Javascript, CSS, HTML
 
