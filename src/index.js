@@ -107,7 +107,6 @@ function addTodo(todos = JSON.parse(localStorage.getItem("todos"))) {
     check.classList.add("check");
     button.classList.add("clear");
     // Set attributes
-    card.setAttribute("draggable", true);
     img.setAttribute("src", "./images/trash.svg");
     img.setAttribute("alt", "Remove");
     cbInput.setAttribute("type", "checkbox");
@@ -118,13 +117,6 @@ function addTodo(todos = JSON.parse(localStorage.getItem("todos"))) {
       card.classList.add("checked");
       cbInput.setAttribute("checked", "checked");
     }
-    // Add drag listener to card
-    card.addEventListener("dragstart", function () {
-      this.classList.add("dragging");
-    });
-    card.addEventListener("dragend", function () {
-      this.classList.remove("dragging");
-    });
     // Add click listener to checkbox
     cbInput.addEventListener("click", function () {
       const correspondingCard = this.parentElement.parentElement;
@@ -169,7 +161,7 @@ function addTodo(todos = JSON.parse(localStorage.getItem("todos"))) {
     card.appendChild(button);
     document.querySelector(".todos").appendChild(card);
   });
-  
+
   // Update itemsLeft
   itemsLeft.textContent = document.querySelectorAll(
     ".todos .card:not(.checked)"
